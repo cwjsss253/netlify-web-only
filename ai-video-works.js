@@ -6,6 +6,8 @@ const modalMeta = document.querySelector(".video-modal__caption span");
 const modalClose = document.querySelector(".video-modal__close");
 
 const categories = new Map();
+let createdCardCount = 0;
+const eagerVideoCount = 12;
 const videoObserver =
   "IntersectionObserver" in window
     ? new IntersectionObserver(
@@ -136,9 +138,17 @@ function createCard(item) {
   button.className = "video-card";
   button.type = "button";
   button.dataset.title = item.title;
+  createdCardCount += 1;
+  const shouldEagerLoad = createdCardCount <= eagerVideoCount;
   button.innerHTML = `
     <div class="video-card__media">
-      <video data-src="${getVideoSource(item)}" muted playsinline preload="none"></video>
+      <video
+        ${shouldEagerLoad ? `src="${getVideoSource(item)}"` : ""}
+        data-src="${getVideoSource(item)}"
+        muted
+        playsinline
+        preload="${shouldEagerLoad ? "metadata" : "none"}"
+      ></video>
       <span class="video-card__index">${cleanVisibleText(item.title)}</span>
     </div>
   `;
