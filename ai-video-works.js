@@ -40,14 +40,12 @@ function getVideoSource(item) {
   return `${videoBaseUrl}/${encodedPath}`;
 }
 
-window.AI_VIDEO_WORKS
-  .filter((item) => item.title !== "横版国内漫剧2")
-  .forEach((item) => {
+window.AI_VIDEO_WORKS.forEach((item) => {
   if (!categories.has(item.category)) {
     categories.set(item.category, []);
   }
   categories.get(item.category).push(item);
-  });
+});
 
 function cleanVisibleText(text) {
   return text.replaceAll("冰川", "");
