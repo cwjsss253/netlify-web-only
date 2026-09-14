@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI买量案例｜金从文 Portfolio</title>
+    <link rel="stylesheet" href="./detail-nav.css" />
+    <link rel="stylesheet" href="./ai-video-works.css" />
+  </head>
+  <body>
+    <main class="video-page">
+      <nav class="detail-nav" aria-label="作品详情导航">
+        <a class="detail-nav__home" href="./index.html#work">返回主网站</a>
+        <div class="detail-nav__links">
+          <a class="is-active" href="./ai-video-works.html">AI买量案例</a>
+          <a href="./ui-portfolio.html">UI作品案例</a>
+          <a href="./ip-portfolio.html">IP作品案例</a>
+        </div>
+      </nav>
+      <header class="video-header">
+        <div>
+          <h1>AI买量案例</h1>
+          <span>游戏买量视频 / 漫剧视频 / 个人短片</span>
+        </div>
+      </header>
+
+      <section class="video-board" id="video-board" aria-label="AI买量视频作品"></section>
+    </main>
+
+    <div class="video-modal" aria-hidden="true">
+      <button class="video-modal__close" type="button" aria-label="关闭视频">×</button>
+      <video class="video-modal__player" controls playsinline></video>
+      <div class="video-modal__caption">
+        <p></p>
+        <span></span>
+      </div>
+    </div>
+
+    <script src="./video-config.js"></script>
+    <script src="./video-data.js"></script>
+    <script src="./ai-video-works.js"></script>
+  </body>
+</html>
